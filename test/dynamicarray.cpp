@@ -164,6 +164,15 @@ BOOST_AUTO_TEST_CASE(test_remove_element)
 	BOOST_CHECK_EQUAL(a.size(), 0);
 }
 
+BOOST_AUTO_TEST_CASE(test_find_value)
+{
+	DataStructure::DynamicArray a(10);
+	a[5] = 100;
+
+	BOOST_CHECK_EQUAL(a.find(100), 5);
+	BOOST_CHECK_EQUAL(a.find(103), -1);
+}
+
 BOOST_AUTO_TEST_CASE(test_iterator_begin_value)
 {
 	DataStructure::DynamicArray array(0);

@@ -8,5 +8,5 @@ main.o: main.cpp
 	g++ -Wall -c -ggdb main.cpp 
 
 clean:
-	rm *.o a.out
+	rm -f *.o a.out
 
