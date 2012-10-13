@@ -8,7 +8,7 @@ int main(int argc, char** argv)
 {
 	try
 	{
-		DataStructure::DynamicArray array(1);
+		DataStructure::DynamicArray<int> array(1);
 		array.append(4);
 		array.append(7);
 
@@ -16,7 +16,7 @@ int main(int argc, char** argv)
 
 		std::cout << "Print values" << std::endl;
 
-		for (DataStructure::DynamicArray::Iterator i = array.begin(); i != array.end(); ++i) {
+		for (DataStructure::DynamicArray<int>::Iterator i = array.begin(); i != array.end(); ++i) {
 			std::cout << *i << " " ;
 		}
 
