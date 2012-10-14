@@ -15,6 +15,8 @@ public:
 	Profile(const Profile& profile);
 	Profile& operator=(const Profile& profile);
 
+	bool operator==(const Profile& rhs);
+
 	// accessors
 	const std::string& firstName() const;
 	void setFirstName(const std::string& firstName);

@@ -10,6 +10,8 @@ OBJECTS = $(SOURCES:.cpp=.o)
 
 all: $(TARGET) 
 
+# FIXME: rewrite target and dependencies.
+
 $(TARGET): 
 	g++ -Wall -fPIC -c -ggdb src/dynamicarray.cpp -o obj/dynamicarray.o
 	g++ -shared -ggdb -Wl,-soname,libds.so.1 obj/dynamicarray.o -o lib/libds.so.1.0

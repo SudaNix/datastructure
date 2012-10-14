@@ -30,6 +30,11 @@ Profile& Profile::operator=(const Profile& rhs)
 	return *this;
 }
 
+bool Profile::operator==(const Profile& rhs)
+{
+	return ( (m_firstName == rhs.m_firstName) && (m_lastName == rhs.m_lastName) );
+}
+
 const std::string& Profile::firstName() const
 {
 	return m_firstName;

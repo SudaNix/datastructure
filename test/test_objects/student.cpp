@@ -37,4 +37,8 @@ Student& Student::operator=(const Student& rhs)
 	return *this;
 }
 
+bool Student::operator==(const Student& rhs)
+{
+	return (m_id == rhs.m_id) && ((*m_profile) == (*rhs.m_profile));
+}
 }

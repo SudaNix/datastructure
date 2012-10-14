@@ -15,6 +15,8 @@ public:
 	Student(const Student& rhs);
 	Student& operator=(const Student& rhs);
 
+	bool operator==(const Student& rhs);
+
 	// accessors
 	int id() const { return m_id; }
 	void setId(int id) { m_id = id; }
