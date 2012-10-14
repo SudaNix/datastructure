@@ -2,3 +2,4 @@ lib/*
 *.o
 *.swp
 *.swo
+a.out
