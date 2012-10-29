@@ -4,7 +4,7 @@
 #include <boost/test/unit_test.hpp>
 #include <boost/test/test_case_template.hpp>
 #include <boost/mpl/list.hpp>
-#include "../include/dynamicarray.h"
+#include "../../include/dynamicarray.h"
 #include "test_objects/student.h"
 #include "test_objects/profile.h"
 	

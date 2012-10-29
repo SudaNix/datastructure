@@ -14,7 +14,8 @@ all: $(TARGET)
 
 $(TARGET): 
 	g++ -Wall -fPIC -c -ggdb src/dynamicarray.cpp -o obj/dynamicarray.o
-	g++ -shared -ggdb -Wl,-soname,libds.so.1 obj/dynamicarray.o -o lib/libds.so.1.0
+	g++ -Wall -fPIC -c -ggdb src/singlelinkedlist.cpp -o obj/singlelinkedlist.o
+	g++ -shared -ggdb -Wl,-soname,libds.so.1 obj/dynamicarray.o obj/singlelinkedlist.o -o lib/libds.so.1.0
 	cd lib/; ln -sf libds.so.1.0 libds.so.1
 	cd lib/; ln -sf libds.so.1 libds.so
 	cd test/; make

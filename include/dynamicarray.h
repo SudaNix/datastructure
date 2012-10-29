@@ -33,6 +33,7 @@ public:
     const T& at(int index);
 
 	int size() const;
+	int count() const; // count == size
 	void clear();
     void printDebug();
     
@@ -41,8 +42,6 @@ public:
     public:
         Iterator(T* p) : m_p(p) {}
         ~Iterator() {}
-
-        // default copy ctor and assignment operator (shallow copy)
         
         T& operator* () const { return *m_p; }
         T& operator[](int i) const { return *(m_p + i); }
@@ -63,8 +62,6 @@ public:
     public:
         ConstIterator(T* p) : m_p(p) {}
         ~ConstIterator() {}
-
-        // default copy ctor and assignment operator (shallow copy)
         
         const T& operator* () const { return *m_p; }
         const T& operator[](int i) const { return *(m_p + i); }
@@ -327,6 +324,12 @@ void DynamicArray<T>::clearAll()
 
 template <typename T>
 int DynamicArray<T>::size() const
+{
+	return m_size;
+}
+
+template <typename T>
+int DynamicArray<T>::count() const
 {
 	return m_size;
 }
