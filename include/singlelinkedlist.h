@@ -75,7 +75,7 @@ public:
 
 		bool hasValue() const { return n != NULL; }
         bool operator==(const Iterator& rhs) const { if (!rhs.hasValue()) return false; return n->value == rhs.n->value; }
-        bool operator!=(const Iterator& rhs) const { if (!rhs.hasValue()) return false; return n->value != rhs.n->value; }
+        bool operator!=(const Iterator& rhs) const { return !operator==(rhs);}
     };
 
     class ConstIterator
@@ -111,7 +111,7 @@ public:
 
 		bool hasValue() const { return n != NULL; }
         bool operator==(const ConstIterator& rhs) const { return n->value == rhs.n->value; }
-        bool operator!=(const ConstIterator& rhs) const { if (!rhs.hasValue()) return false; return n->value != rhs.n->value; }
+        bool operator!=(const ConstIterator& rhs) const { return !operator==(rhs);}
     };
 
  
@@ -168,6 +168,12 @@ void SingleLinkedList::copy(const SingleLinkedList& rhs)
 
 void SingleLinkedList::clear()
 {
+	if (m_head == NULL) {
+		m_tail = NULL;
+		m_count = 0;
+		return;
+	}
+
 	Node* node = m_head;
 	while (node->next != NULL) {
 		Node* tmp = node;
@@ -242,7 +248,7 @@ void SingleLinkedList::prepend(const int& value)
 
 void SingleLinkedList::insert(const int& value, SingleLinkedList::Iterator pos)
 {
-	if (pos.n == m_head)
+	if (pos.n == m_head || pos.n == NULL)
 		prepend(value);
 	else if (pos.n == m_tail)
 		append(value);

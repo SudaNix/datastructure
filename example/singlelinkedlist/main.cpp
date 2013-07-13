@@ -11,14 +11,8 @@ int main(int argc, char** argv)
 		DataStructure::SingleLinkedList list;
 		std::cout << "count: " << list.count() << std::endl;
 
-		list.append(1);
-		list.append(2);
-		list.append(3);
+		list.insert(100, list.begin());
 	
-		list.debug();
-		std::cout << "count: " << list.count() << std::endl;
-
-
 		DataStructure::SingleLinkedList::Iterator i = list.begin();
 		while ( i != list.end() ) {
 			std::cout << *i << " -> " ;
