@@ -1,0 +1,11 @@
+Simple implementation for data structures for learning purpose using C++
+
+Currently support:
+- Dynamic Array
+- Single Linked List
+
+TODO:
+- Write more unit test
+- Fix makefile
+- generate documentation
+- Add more data structures
